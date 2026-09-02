@@ -42,44 +42,43 @@
 
 :root {
   color-scheme: dark;
-  --radius: 0.75rem;
+  --radius: 1rem;
 
-  /* Deep near-black with a cool blue/purple undertone */
-  --background: oklch(0.16 0.02 279);
-  --foreground: oklch(0.96 0.01 280);
+  /* Deep near-black with a faint indigo undertone (nexx-ware style) */
+  --background: oklch(0.145 0.015 275);
+  --foreground: oklch(0.97 0.008 280);
 
-  --card: oklch(0.2 0.025 279);
-  --card-foreground: oklch(0.96 0.01 280);
+  --card: oklch(0.2 0.02 278 / 60%);
+  --card-foreground: oklch(0.97 0.008 280);
 
-  --popover: oklch(0.19 0.025 279);
-  --popover-foreground: oklch(0.96 0.01 280);
+  --popover: oklch(0.18 0.02 278);
+  --popover-foreground: oklch(0.97 0.008 280);
 
-  /* Purple primary */
-  --primary: oklch(0.62 0.24 296);
-  --primary-foreground: oklch(0.98 0.01 280);
+  /* Indigo/blue primary */
+  --primary: oklch(0.58 0.22 274);
+  --primary-foreground: oklch(0.99 0.005 280);
 
-  /* Blue secondary */
-  --secondary: oklch(0.26 0.04 275);
-  --secondary-foreground: oklch(0.96 0.01 280);
+  --secondary: oklch(0.24 0.03 275);
+  --secondary-foreground: oklch(0.97 0.008 280);
 
-  --muted: oklch(0.24 0.03 279);
-  --muted-foreground: oklch(0.7 0.03 280);
+  --muted: oklch(0.22 0.025 278);
+  --muted-foreground: oklch(0.68 0.025 280);
 
-  /* Blue accent */
-  --accent: oklch(0.62 0.19 256);
-  --accent-foreground: oklch(0.98 0.01 280);
+  /* Violet accent */
+  --accent: oklch(0.62 0.22 300);
+  --accent-foreground: oklch(0.99 0.005 280);
 
   --destructive: oklch(0.62 0.24 20);
 
-  --border: oklch(0.4 0.05 285 / 22%);
-  --input: oklch(0.4 0.05 285 / 18%);
-  --ring: oklch(0.62 0.24 296);
+  --border: oklch(0.6 0.05 285 / 12%);
+  --input: oklch(0.6 0.05 285 / 14%);
+  --ring: oklch(0.58 0.22 274);
 
-  --chart-1: oklch(0.62 0.24 296);
-  --chart-2: oklch(0.62 0.19 256);
-  --chart-3: oklch(0.7 0.16 200);
+  --chart-1: oklch(0.58 0.22 274);
+  --chart-2: oklch(0.62 0.22 300);
+  --chart-3: oklch(0.66 0.16 240);
   --chart-4: oklch(0.72 0.19 330);
-  --chart-5: oklch(0.68 0.15 150);
+  --chart-5: oklch(0.68 0.15 200);
 }
 
 @layer base {

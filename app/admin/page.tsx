@@ -1,30 +1,11 @@
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
-import { AdminDashboard } from "@/components/admin-dashboard"
-import { Badge } from "@/components/ui/badge"
+import Link from "next/link"
+import { ArrowLeft, BarChart3, KeyRound, ShieldCheck, Users } from "lucide-react"
+import { Navbar } from "@/components/navbar"
+
+const stats = [{ label: "Users", value: "842", icon: Users }, { label: "Scripts", value: "24", icon: BarChart3 }, { label: "Active keys", value: "128", icon: KeyRound }]
 
 export default function AdminPage() {
-  return (
-    <div className="flex min-h-dvh flex-col">
-      <SiteHeader />
-      <main className="flex-1">
-        <div className="mx-auto max-w-6xl px-4 py-12">
-          <header className="max-w-2xl">
-            <Badge variant="default">Admin</Badge>
-            <h1 className="mt-3 text-balance font-display text-3xl font-bold tracking-tight sm:text-4xl">
-              Admin dashboard
-            </h1>
-            <p className="mt-3 text-pretty text-muted-foreground">
-              Manage users, scripts, and keys, review analytics, and publish announcements.
-            </p>
-          </header>
-
-          <div className="mt-8">
-            <AdminDashboard />
-          </div>
-        </div>
-      </main>
-      <SiteFooter />
-    </div>
-  )
+  return <div className="min-h-dvh"><Navbar /><main className="mx-auto max-w-6xl px-4 py-12"><Link href="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"><ArrowLeft className="h-4 w-4" /> Back home</Link><div className="mt-8 flex items-end justify-between gap-4"><div><div className="eyebrow"><ShieldCheck className="h-3.5 w-3.5" /> Admin overview</div><h1 className="mt-4 font-display text-4xl font-bold sm:text-5xl">Control center</h1><p className="mt-3 text-muted-foreground">Monitor your hub and jump into protected management tools.</p></div><Link href="/loader" className="hidden rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground sm:block">Open loader</Link></div><div className="mt-10 grid gap-4 sm:grid-cols-3">{stats.map(({ label, value, icon: Icon }) => <div className="glass-panel p-5" key={label}><Icon className="h-5 w-5 text-primary" /><p className="mt-5 text-sm text-muted-foreground">{label}</p><p className="mt-1 font-display text-3xl font-bold">{value}</p></div>)}</div><div className="mt-6 grid gap-5 lg:grid-cols-[1.2fr_.8fr]"><section className="glass-panel p-6"><h2 className="font-display text-xl font-semibold">Recent activity</h2><div className="mt-5 space-y-4">{["Studio Toolkit was updated to v1.8.0", "New monthly key generated", "Island Utilities reached 1,000 downloads", "Moderator role granted to Nova"].map((item, index) => <div className="flex items-center justify-between gap-4 border-b border-border/60 pb-4 text-sm last:border-0 last:pb-0" key={item}><span>{item}</span><span className="text-xs text-muted-foreground">{index + 2}h ago</span></div>)}</div></section><section className="glass-panel p-6"><h2 className="font-display text-xl font-semibold">Quick actions</h2><div className="mt-5 grid gap-3"><Link href="/loader" className="rounded-xl border border-border bg-card/60 p-4 text-sm transition hover:border-primary/50">Manage scripts</Link><Link href="/loader" className="rounded-xl border border-border bg-card/60 p-4 text-sm transition hover:border-primary/50">Manage license keys</Link><Link href="/loader" className="rounded-xl border border-border bg-card/60 p-4 text-sm transition hover:border-primary/50">Review users</Link></div></section></div></main></div>
 }
+
+export const dynamic = "force-dynamic"
