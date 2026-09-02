@@ -19,15 +19,15 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'VipriX Hub — Roblox Lua Script Management',
+  title: 'VipriX — one hub for your scripts',
   description:
-    'Manage, license, and distribute your Lua scripts with a secure key system, admin analytics, and a polished developer experience.',
+    'A modern script hub. Browse, copy, and download scripts with a clean, fast experience and a secure licensing key system.',
   generator: 'v0.app',
 }
 
 export const viewport: Viewport = {
   colorScheme: 'dark',
-  themeColor: '#1a1626',
+  themeColor: '#0c0a14',
 }
 
 export default function RootLayout({
