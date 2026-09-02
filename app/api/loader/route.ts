@@ -1,0 +1,2 @@
+import {NextResponse} from 'next/server';
+export async function POST(request:Request){const {password}=await request.json().catch(()=>({password:''}));if(!process.env.LOADER_PASSWORD_3||password!==process.env.LOADER_PASSWORD_3)return NextResponse.json({error:'Invalid password'},{status:401});const response=NextResponse.json({ok:true});response.cookies.set('viprix_loader','authorized',{httpOnly:true,sameSite:'lax',secure:process.env.NODE_ENV==='production',maxAge:60*60*8,path:'/'});return response}
