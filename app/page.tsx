@@ -8,9 +8,9 @@ import {
   Gauge,
   Users,
 } from "lucide-react"
-import { AnimatedBackground } from "@/components/animated-background"
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
+import { AuroraBackground } from "@/components/aurora-background"
+import { Navbar } from "@/components/navbar"
+import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
@@ -57,12 +57,12 @@ function formatStat(n: number) {
 export default function HomePage() {
   return (
     <div className="flex min-h-dvh flex-col">
-      <SiteHeader />
+      <Navbar />
 
       <main className="flex-1">
         {/* Hero */}
         <section className="relative overflow-hidden">
-          <AnimatedBackground />
+          <AuroraBackground />
           <div className="mx-auto max-w-6xl px-4 py-20 sm:py-28">
             <div className="mx-auto max-w-3xl text-center">
               <Badge className="mx-auto">Roblox Lua script management</Badge>
@@ -151,7 +151,7 @@ export default function HomePage() {
         </section>
       </main>
 
-      <SiteFooter />
+      <Footer />
     </div>
   )
 }
