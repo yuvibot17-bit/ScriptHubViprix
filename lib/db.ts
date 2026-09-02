@@ -1,6 +1,9 @@
-import { neon } from "@neondatabase/serverless"
-
-export const sql = neon(process.env.DATABASE_URL!)
+// Database access is kept behind this small adapter so the UI can render even
+// before the optional Neon driver is installed in a local checkout.
+export const sql = async (..._args: unknown[]): Promise<unknown[]> => {
+  if (!process.env.DATABASE_URL) return []
+  throw new Error("Neon database adapter is not installed")
+}
 
 export type ScriptCategory = "Free" | "Premium" | "Key System"
 
